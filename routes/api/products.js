@@ -13,6 +13,7 @@ router.get("/", async (req,res)=>{
     let products = await Product.find().skip(skipRecords).limit(perpage);
     let total= await Product.countDocuments();
     return res.send({total,products});
+    
 });
 //get single products
 router.get("/:id", async (req,res)=>{
